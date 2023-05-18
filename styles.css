@@ -175,6 +175,81 @@ a{
 
 
  }
+ /* For screens smaller than 1200px width */
+@media (max-width: 1200px) {
+  .container {
+    width: 90%; /* Reduce the width of the container */
+    max-width: 1200px; /* Add a max-width to prevent the container from getting too wide */
+  }
+  .nav-bar {
+    padding: 1rem 0; /* Reduce the top and bottom padding of the navigation bar */
+  }
+  .logo {
+    width: 120px; /* Reduce the size of the logo */
+  }
+  .nav-items {
+    display: none; /* Hide the navigation items */
+  }
+  .hamburger {
+    display: block; /* Show the hamburger menu */
+  }
+  .hero-section {
+    margin: 2rem auto; /* Reduce the margin of the hero section */
+    flex-direction: column; /* Stack the hero section items vertically */
+    gap: 2rem;
+    text-align: center; /* Center align the hero section text */
+    padding-bottom: 4rem; /* Reduce the bottom padding of the hero section */
+  }
+  .hero-section-sub-heading {
+    font-size: 35px; /* Reduce the size of the sub-heading */
+  }
+}
+
+/* For screens smaller than 768px width */
+@media (max-width: 768px) {
+  .logo {
+    width: 100px; /* Reduce the size of the logo even further */
+  }
+  .hamburger {
+    font-size: 2rem; /* Increase the size of the hamburger icon */
+    margin-right: 1rem; /* Add some spacing between the hamburger icon and the logo */
+  }
+  .nav-items {
+    display: flex; /* Show the navigation items */
+    flex-direction: column; /* Stack the navigation items vertically */
+    position: absolute; /* Position the navigation items absolutely */
+    top: 100%; /* Position the navigation items below the navigation bar */
+    left: 0;
+    width: 100%; /* Make the navigation items take up the full width of the screen */
+    padding: 1rem 0;
+    background-color: white; /* Add a white background to the navigation items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    opacity: 0; /* Hide the navigation items by default */
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 999; /* Ensure the navigation items are on top of other content */
+  }
+  .nav-items.show {
+    opacity: 1; /* Show the navigation items when the hamburger menu is clicked */
+    visibility: visible;
+  }
+  .nav-items div {
+    font-size: 24px; /* Reduce the font size of the navigation items */
+    text-align: center; /* Center align the navigation items */
+    padding: 1rem 0;
+    border-top: 1px solid #ccc; /* Add a border between the navigation items */
+  }
+  .nav-items div:first-child {
+    border-top: none; /* Remove the border from the first navigation item */
+  }
+  .hero-section {
+    padding-bottom: 2rem; /* Reduce the bottom padding of the hero section even further */
+  }
+  .hero-section-sub-heading {
+    font-size: 28px; /* Reduce the size of the sub-heading even further */
+  }
+}
+
 
  .user-image img{
     z-index: -9;
@@ -461,6 +536,141 @@ a{
     margin: 15px auto;
   }
 
+  .skills-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 10rem auto;
+    gap: 30px;
+  }
+  
+  .skill-container-left{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .skill-container-right{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    gap: 2rem;
+  }
+  
+  .skill-fade-text{
+    position: absolute;
+    font-size: 15rem;
+    font-style: bold;
+    color: rgb(231,231,231);
+    right: -25%;
+    bottom: -34.5%;
+    overflow-x: hidden;
+    user-select: none;
+  }
+  
+  .blob-style{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  
+    animation: blobAnimate 3s linear infinite;
+    transform: translate(-50%,-50%);
+    z-index: -5;
+  }
+  
+  @keyframes blobAnimate {
+    50%{
+      top: 54%;
+      left: 46%;
+    }
+  }
+  
+  .skills-logo{
+    width: 110px;
+    height: 110px;
+    transition: all 0.5s;
+  }
+  .skills-logo:hover{
+    transform: scale(1.2);
+  }
+  
+  
+  .skill-heading{
+    font-size: 50px;
+    color: var(--bgOrange);
+    line-height: 50px;
+    text-align: center;
+  }
+  
+  .caps{
+    font-size: 90px;
+  }
+  
+  .skill-subheading{
+    margin-top: 1rem;
+    width: 85%;
+    text-align: justify;
+    text-align: center;
+  }
+  .skill-subheading p{
+    margin: 15px auto;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .skills-container{
+      flex-direction: row;
+      margin: 10rem auto;
+    }
+  
+    .skill-container-left{
+      width: 50%;
+    }
+    .skill-container-right{
+      width: 50%;
+    }
+  
+    .skills-logo{
+      width: 150px;
+      height: 150px;
+    }
+  
+    .skill-heading{
+      font-size: 60px;
+      line-height: 60px;
+    }
+  
+    .caps{
+      font-size: 120px;
+    }
+  
+    .skill-subheading{
+      width: 70%;
+    }
+  }
+  
+  @media screen and (min-width: 1200px) {
+    .skills-container{
+      padding: 5rem;
+    }
+  
+    .skill-heading{
+      font-size: 80px;
+      line-height: 80px;
+    }
+  
+    .caps{
+      font-size: 160px;
+    }
+  
+    .skill-subheading{
+      width: 60%;
+    }
+  }
+  
   .contactus-form-container{
     width: 100%;
     background-color: rgb(231,231,231);
@@ -576,3 +786,29 @@ a{
   i{
     color: white;
   }
+  @media only screen and (max-width: 768px) {
+    .contactus-form-container {
+      flex-direction: column;
+    }
+  
+    .form {
+      width: 100%;
+      margin: 2rem 0;
+    }
+  
+    .footer {
+      padding: 3rem;
+    }
+  
+    .footer-wrapper {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer-faded-text {
+      font-size: 3em;
+    }
+  }
+  
