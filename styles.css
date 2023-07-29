@@ -44,11 +44,10 @@
 }
 
 .nav-items div{
-    font-size: 30px;
+    font-size: 34px;
     font-weight: bold;
     cursor: pointer;
    
-    
 }
 .nav-items div:hover{
     transition: 0.8s;
@@ -167,7 +166,7 @@ a{
 
  .user-image{
     padding: 2.5rem;
-    filter: grayscale(1);
+    /* filter: grayscale(1); */
     transition: all 1s;
 
                 /* name  duration timing function iteration */
@@ -257,13 +256,12 @@ a{
 
  @keyframes scaleImage {
     0%{
-        filter: grayscale(0);
         transform: scale(1);
     }
 
     50%{
         transform: scale(1.1);
-        filter: grayscale(1);
+       
         
     }
 
@@ -271,7 +269,6 @@ a{
         box-shadow: 3px 3px 10px black;
         transform: scale(1);
         filter: grayscale(0);
-
     }
  }
 

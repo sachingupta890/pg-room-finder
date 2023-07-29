@@ -20,7 +20,7 @@ body {
 }
 .main-nav ul {
 	position: absolute;
-  width: 100%;
+  /* width: 100%; */
 	top: 40%;
 	margin: 0;
 	padding: 0;
@@ -221,7 +221,7 @@ body {
   /* space left for the HIDE button */
   padding-right: 65px;
 }
-.form input[type=submit] {
+.submit-button {
   padding: 16px 0;
   cursor: pointer;
   background: #F64747;

@@ -92,14 +92,14 @@ jQuery(document).ready(function($){
   }
 
   //REMOVE THIS - it's just to show error messages 
-  $form_login.find('input[type="submit"]').on('click', function(event){
-    event.preventDefault();
-    $form_login.find('input[type="email"]').toggleClass('has-error').next('span').toggleClass('is-visible');
-  });
-  $form_signup.find('input[type="submit"]').on('click', function(event){
-    event.preventDefault();
-    $form_signup.find('input[type="email"]').toggleClass('has-error').next('span').toggleClass('is-visible');
-  });
+  // $form_login.find('input[type="submit"]').on('click', function(event){
+  //   event.preventDefault();
+  //   $form_login.find('input[type="email"]').toggleClass('has-error').next('span').toggleClass('is-visible');
+  // });
+  // $form_signup.find('input[type="submit"]').on('click', function(event){
+  //   event.preventDefault();
+  //   $form_signup.find('input[type="email"]').toggleClass('has-error').next('span').toggleClass('is-visible');
+  // });
 
 
   //IE9 placeholder fallback
@@ -146,50 +146,50 @@ jQuery.fn.putCursorAtEnd = function() {
   });
 };
 
-const signInButton = document.querySelector(".signin");
-const signUpButton = document.querySelector(".signup");
+// const signInButton = document.querySelector(".signin");
+// const signUpButton = document.querySelector(".signup");
 
-signInButton.addEventListener("click", (event) => {
-  event.preventDefault(); // prevent the form from submitting normally
+// signInButton.addEventListener("click", (event) => {
+//   event.preventDefault(); // prevent the form from submitting normally
 
-  const email = document.querySelector("#signin-email").value;
-  const password = document.querySelector("#signin-password").value;
+//   const email = document.querySelector("#signin-email").value;
+//   const password = document.querySelector("#signin-password").value;
 
-  // send a POST request to the login endpoint with the form data
-  fetch("/login", {
-    method: "POST",
-    body: JSON.stringify({ email, password }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      // do something with the response data, such as redirect to a new page
-    })
-    .catch((error) => console.error(error));
-});
+//   // send a POST request to the login endpoint with the form data
+//   fetch("/login", {
+//     method: "POST",
+//     body: JSON.stringify({ email, password }),
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   })
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log(data);
+//       // do something with the response data, such as redirect to a new page
+//     })
+//     .catch((error) => console.error(error));
+// });
 
-signUpButton.addEventListener("click", (event) => {
-  event.preventDefault(); // prevent the form from submitting normally
+// signUpButton.addEventListener("click", (event) => {
+//   event.preventDefault(); // prevent the form from submitting normally
 
-  const name = document.querySelector("#signup-username").value;
-  const email = document.querySelector("#signup-email").value;
-  const password = document.querySelector("#signup-password").value;
+//   const name = document.querySelector("#signup-username").value;
+//   const email = document.querySelector("#signup-email").value;
+//   const password = document.querySelector("#signup-password").value;
 
-  // send a POST request to the signup endpoint with the form data
-  fetch("/signup", {
-    method: "POST",
-    body: JSON.stringify({ name, email, password }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      // do something with the response data, such as redirect to a new page
-    })
-    .catch((error) => console.error(error));
-});
+//   // send a POST request to the signup endpoint with the form data
+//   fetch("/signup", {
+//     method: "POST",
+//     body: JSON.stringify({ name, email, password }),
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   })
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log(data);
+//       // do something with the response data, such as redirect to a new page
+//     })
+//     .catch((error) => console.error(error));
+// });

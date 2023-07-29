@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Login and Registration Form Example</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+	<meta charset="UTF-8">
+	<title>Login and Registration Form Example</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'>
+	<link rel="stylesheet" href="./style.css">
 
 </head>
-<body>
-<!-- partial:index.partial.html -->
-<nav class="main-nav">
-	<ul>
-		<li><a class="signin" href="#0">Sign in</a></li>
-		<li><a class="signup" href="#0">Sign up</a></li>
-	</ul>
-</nav>
 
-<div class="user-modal">
+<body>
+	<nav class="main-nav">
+		<ul>
+			<li><a class="signin" href="#0">Sign in</a></li>
+			<li><a class="signup" href="#0">Sign up</a></li>
+		</ul>
+	</nav>
+
+	<div class="user-modal">
 		<div class="user-modal-container">
 			<ul class="switcher">
 				<li><a href="#0">Sign in</a></li>
@@ -27,13 +29,15 @@
 				<form class="form">
 					<p class="fieldset">
 						<label class="image-replace email" for="signin-email">E-mail</label>
-						<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+						<input required class="full-width has-padding has-border" id="signin-email" type="email"
+							placeholder="E-mail">
 						<span class="error-message">An account with this email address does not exist!</span>
 					</p>
 
 					<p class="fieldset">
 						<label class="image-replace password" for="signin-password">Password</label>
-						<input class="full-width has-padding has-border" id="signin-password" type="password"  placeholder="Password">
+						<input required class="full-width has-padding has-border" id="signin-password" type="password"
+							placeholder="Password">
 						<a href="#0" class="hide-password">Show</a>
 						<span class="error-message">Wrong password! Try again.</span>
 					</p>
@@ -42,12 +46,14 @@
 						<input type="checkbox" id="remember-me" checked>
 						<label for="remember-me">Remember me</label>
 					</p>
-
+					<p class="login-error"></p>
 					<p class="fieldset">
-						<input class="full-width" type="submit" value="Login">
+						<input style="  height: 40px;
+						background-color: orangered;
+						color: white;cursor: 'pointer';" class="full-width" type="button" value="Login" id="loginSubmit">
 					</p>
 				</form>
-				
+
 				<p class="form-bottom-message"><a href="#0">Forgot your password?</a></p>
 				<!-- <a href="#0" class="close-form">Close</a> -->
 			</div>
@@ -56,19 +62,23 @@
 				<form class="form">
 					<p class="fieldset">
 						<label class="image-replace username" for="signup-username">Username</label>
-						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
-						<span class="error-message">Your username can only contain numeric and alphabetic symbols!</span>
+						<input class="full-width has-padding has-border" id="signup-username" type="text"
+							name="username" placeholder="Username">
+						<span class="error-message">Your username can only contain numeric and alphabetic
+							symbols!</span>
 					</p>
 
 					<p class="fieldset">
 						<label class="image-replace email" for="signup-email">E-mail</label>
-						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+						<input class="full-width has-padding has-border" id="signup-email" name="email" type="email"
+							placeholder="E-mail">
 						<span class="error-message">Enter a valid email address!</span>
 					</p>
 
 					<p class="fieldset">
 						<label class="image-replace password" for="signup-password">Password</label>
-						<input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Password">
+						<input class="full-width has-padding has-border" name="password" id="signup-password"
+							type="password" placeholder="Password">
 						<a href="#0" class="hide-password">Show</a>
 						<span class="error-message">Your password has to be at least 6 characters long!</span>
 					</p>
@@ -77,22 +87,26 @@
 						<input type="checkbox" id="accept-terms">
 						<label for="accept-terms">I agree to the <a class="accept-terms" href="#0">Terms</a></label>
 					</p>
-
+					<p class="success-msg"></p>
 					<p class="fieldset">
-						<input class="full-width has-padding" type="submit" value="Create account">
+						<button type="button" class="full-width has-padding submit-button" id="formSubmit">Create
+							account</button>
 					</p>
 				</form>
+
 
 				<!-- <a href="#0" class="cd-close-form">Close</a> -->
 			</div>
 
 			<div id="reset-password">
-				<p class="form-message">Lost your password? Please enter your email address.</br> You will receive a link to create a new password.</p>
+				<p class="form-message">Lost your password? Please enter your email address.</br> You will receive a
+					link to create a new password.</p>
 
 				<form class="form">
 					<p class="fieldset">
 						<label class="image-replace email" for="reset-email">E-mail</label>
-						<input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+						<input class="full-width has-padding has-border" id="reset-email" type="email"
+							placeholder="E-mail">
 						<span class="error-message">An account with this email does not exist!</span>
 					</p>
 
@@ -106,8 +120,77 @@
 			<a href="#0" class="close-form">Close</a>
 		</div>
 	</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+	<!-- partial -->
+	<script src="https://code.jquery.com/jquery-3.7.0.js"
+		integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+	<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
+	<script src="./script.js"></script>
+	<script>
+		$('.user-modal').find('.success-msg').hide();
+		$('#formSubmit').click(function () {
+			const name = document.querySelector("#signup-username").value;
+			const email = document.querySelector("#signup-email").value;
+			const password = document.querySelector("#signup-password").value;
+			$.ajax({
+				type: 'POST',
+				url: 'http://localhost:4000/api/v1/signup',
+				data: JSON.stringify({ name: name, email: email, password: password, role: 'Student' }),
+				contentType: 'application/json; charset=utf-8',
+				dataType: 'json',
+				async: false,
+				success: (res) => {
+					console.log("res", res)
+					$('.user-modal').find('.success-msg').show()
+					$('.user-modal').find('.success-msg').text(res.message)
+					document.querySelector("#signup-username").value = "";
+					document.querySelector("#signup-email").value = "";
+					document.querySelector("#signup-password").value = "";
 
+				},
+				error: (err) => {
+					const error = JSON.parse(err.responseText)
+					$('.user-modal').find('.success-msg').show();
+					$('.user-modal').find('.success-msg').text(error.message)
+					document.querySelector("#signup-username").value = "";
+					document.querySelector("#signup-email").value = "";
+					document.querySelector("#signup-password").value = "";
+				}
+			})
+		});
+		$('.login-error').hide();
+		$('#loginSubmit').click(function () {
+			const email = document.querySelector("#signin-email").value;
+			const password = document.querySelector("#signin-password").value;
+
+			// Send login request to the backend
+			$.ajax({
+				type: 'POST',
+				url: 'http://localhost:4000/api/v1/login',
+				data: JSON.stringify({ email: email, password: password }),
+				contentType: 'application/json; charset=utf-8',
+				dataType: 'json',
+				async: false,
+				success: (res) => {
+					if (res.status) {
+						$('.login-error').show();
+						$('.login-error').css('color', 'green');
+						localStorage.setItem('user', JSON.stringify(res));
+						window.location.href = 'http://127.0.0.1:5500/'
+					}
+					// console.log("res", res);
+					// Handle successful login here
+				},
+				error: (err) => {
+					const error = JSON.parse(err.responseText);
+					$('.login-error').show();
+					$('.login-error').css('color', 'red');
+					$('.login-error').text(error.message);
+					document.querySelector("#signin-email").value = "";
+					document.querySelector("#signin-password").value = "";
+				}
+			});
+		});
+	</script>
 </body>
+
 </html>
